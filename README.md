@@ -43,7 +43,7 @@ The app listens on port **3000** inside the container.
 2. Create a deploy directory (e.g. `/opt/pool-monitor-3`) containing **`docker-compose.prod.yml`** from this repo (same content as in Git).
 3. Set the image when starting Compose (GitHub Actions exports `IMAGE` before `docker compose`):
 
-   - The workflow pushes `ghcr.io/<OWNER>/<REPO>:main` (and a commit-SHA tag).
+   - The workflow pushes `ghcr.io/<OWNER>/<REPO>:main` (and a commit-SHA tag). For [this repository](https://github.com/darkovasic/pool-monitor-3), that is **`ghcr.io/darkovasic/pool-monitor-3:main`**.
 
 4. **Private GHCR images:** on the VPS, log in once:
 
@@ -51,7 +51,7 @@ The app listens on port **3000** inside the container.
    echo YOUR_READ_PACKAGES_PAT | docker login ghcr.io -u YOUR_GH_USERNAME --password-stdin
    ```
 
-5. **nginx:** adapt [`deploy/nginx.example.conf`](deploy/nginx.example.conf) (e.g. `server_name`, TLS). Proxy to `127.0.0.1:3000`, which matches Compose binding `127.0.0.1:3000:3000`.
+5. **nginx:** adapt [`deploy/nginx.example.conf`](deploy/nginx.example.conf) (e.g. `server_name`, TLS). Proxy to `127.0.0.1:3002`, which matches Compose binding `127.0.0.1:3002:3000`.
 
 ## GitHub Actions
 

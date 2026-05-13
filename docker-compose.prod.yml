@@ -1,0 +1,10 @@
+# Deploy this file on the VPS (or keep it in-repo and point compose at it).
+# GitHub Actions sets IMAGE to ghcr.io/darkovasic/pool-monitor-3:main on deploy.
+services:
+  app:
+    image: ${IMAGE:-ghcr.io/darkovasic/pool-monitor-3:main}
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3002:3000"
+    environment:
+      NODE_ENV: production
