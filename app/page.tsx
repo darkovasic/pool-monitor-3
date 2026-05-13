@@ -10,12 +10,13 @@ export default function Home() {
         padding: "2rem",
       }}
     >
-      <h1 style={{ fontSize: "1.75rem", fontWeight: 600, margin: 0 }}>
-        Pool Monitor
-      </h1>
-      <p style={{ marginTop: "0.75rem", opacity: 0.8, textAlign: "center" }}>
-        Next.js + Docker + GitHub Actions skeleton.
-      </p>
+      <iframe
+        src="https://grafana.bedrocklabs.online/d-solo/efi7e4fixt9tsb/esp32-001?orgId=1&from=1775487532836&to=1776085709470&timezone=browser&theme=light&panelId=1&__feature.dashboardSceneSolo"
+        width={450}
+        height={200}
+        title="ESP32-001 Grafana panel"
+        style={{ border: "none", maxWidth: "100%" }}
+      />
     </main>
   );
 }
