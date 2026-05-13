@@ -9,4 +9,3 @@ npm-debug.log
 .env*.local
 README.md
 .github
-deploy

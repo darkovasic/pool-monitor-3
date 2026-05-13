@@ -51,7 +51,7 @@ The app listens on port **3000** inside the container.
    echo YOUR_READ_PACKAGES_PAT | docker login ghcr.io -u YOUR_GH_USERNAME --password-stdin
    ```
 
-5. **nginx:** adapt [`deploy/nginx.example.conf`](deploy/nginx.example.conf) (e.g. `server_name`, TLS). Proxy to `127.0.0.1:3002`, which matches Compose binding `127.0.0.1:3002:3000`.
+5. **nginx:** add a `server_name` (your domain) and reverse-proxy to **`127.0.0.1:3002`** (host port from `docker-compose.prod.yml`). Use the same TLS pattern as your other vhosts (e.g. Certbot `certbot --nginx -d your.subdomain`).
 
 ## GitHub Actions
 
